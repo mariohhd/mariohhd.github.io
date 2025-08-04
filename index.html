@@ -23,25 +23,18 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <header style="display: none;">
-    <nav style="display: none;">
+  <header>
+    <nav>
       <a href="#about" id="nav-about">About Me</a>
       <a href="#projects" id="nav-projects">Projects</a>
       <a href="#studies" id="nav-studies">Studies</a>
       <a href="#contact" id="nav-contact">Contact</a>
     </nav>
-    <div class="lang-selector" style="margin-top:1rem; display: none;">
-      <label for="language">Language:</label>
-      <select id="language">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-      </select>
-    </div>
   </header>
   <section class="hero">
     <div class="hero-content header finisher-header" style="width: 100%;">
       <h1 class="hero-title" style="display: inline;">Mario Herreros Díaz</h1>
-      <p class="hero-subtitle"></p>
+      <p class="hero-subtitle">Ingeniero Informático | Desarrollador Full Stack | Profesor</p>
       <a href="#about" class="scroll-down-btn">
         <span class="arrow">&#x2193;</span>
       </a>
@@ -125,22 +118,34 @@
       <h2 id="studies-title">Educación</h2>
       <ul id="studies-list">
         <li>
-          <img src="assets/images/education/uc3m.jpg" alt="UC3M Logo">
-          <strong>Grado en Ingeniería Informática</strong>
-          <span>(2010 - 2014)</span>
-          <p>Formación en fundamentos de la informática, desarrollo de software y sistemas computacionales.</p>
+          <div class="studies-list-title">
+            <img src="assets/images/education/uc3m.jpg" alt="UC3M Logo">
+            <div class="studies-list-info">
+              <strong>Grado en Ingeniería Informática</strong>
+              <span>(2010 - 2014)</span>
+            </div>
+          </div>
+          <p class="studies-list-description">Formación en fundamentos de la informática, desarrollo de software y sistemas computacionales.</p>
         </li>
         <li>
-          <img src="assets/images/education/uc3m.jpg" alt="UC3M Logo">
-          <strong>Máster Universitario en Ciberseguridad</strong>
-          <span>(2015 - 2016)</span>
-          <p>Especialización en seguridad informática, criptografía y protección de sistemas.</p>
+          <div class="studies-list-title">
+            <img src="assets/images/education/uc3m.jpg" alt="UC3M Logo">
+            <div class="studies-list-info">
+              <strong>Máster Universitario en Ciberseguridad</strong>
+              <span>(2015 - 2016)</span>
+            </div>
+          </div>
+          <p class="studies-list-description">Especialización en seguridad informática, criptografía y protección de sistemas.</p>
         </li>
         <li>
-          <img src="assets/images/education/urjc.jpg" alt="URJC Logo">
-          <strong>Máster de Profesorado</strong>
-          <span>(2017 - 2018)</span>
-          <p>Capacitación para la enseñanza en el ámbito educativo, con enfoque en tecnología.</p>
+          <div class="studies-list-title">
+            <img src="assets/images/education/urjc.jpg" alt="URJC Logo">
+            <div class="studies-list-info">
+              <strong>Máster de Profesorado</strong>
+              <span>(2017 - 2018)</span>
+            </div>
+          </div>
+          <p class="studies-list-description">Capacitación para la enseñanza en el ámbito educativo, con enfoque en tecnología.</p>
         </li>
       </ul>
     </section>
@@ -196,6 +201,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelector(".hero-title").innerText = "";
+      document.querySelector(".hero-subtitle").innerText = "";
       new Typed(".hero-title", {
         strings: ["Mario Herreros Díaz"],
         typeSpeed: 50,
@@ -233,24 +239,22 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const sections = document.querySelectorAll(".hero-subtitle");
+      const heroSection = document.querySelector(".hero");
+      const navbar = document.querySelector("header");
 
       const observer = new IntersectionObserver((entries) => {
-        const hero = document.querySelectorAll(".hero")[0];
         entries.forEach(entry => {
           if (!entry.isIntersecting) {
-            hero.classList.add("hide");
+            navbar.classList.add("visible");
           } else {
-            hero.classList.remove("hide");
+            navbar.classList.remove("visible");
           }
         });
       }, {
         threshold: 0.1
       });
 
-      sections.forEach(section => {
-        observer.observe(section);
-      });
+      observer.observe(heroSection);
     });
   </script>
 </body>
