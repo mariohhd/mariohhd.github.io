@@ -1,0 +1,366 @@
+body {
+      font-family: "Mona Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+/* Hero Section Styles */
+.hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.hero-content {
+    text-align: center;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    height: 100vh; /* Set height to full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.hero-subtitle {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+.hero-btn {
+    display: inline-block;
+    background: #ffd700;
+    color: #222;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s;
+}
+.hero-btn:hover {
+    background: #fff;
+    color: #0077ff;
+}
+/* Animation for name */
+.animated-name {
+    display: inline-block;
+    background: linear-gradient(90deg, #0077ff, #00c6ff, #ffd700, #0077ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-move 3s ease-in-out infinite;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #222;
+}
+header {
+  display: none;
+}
+nav {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+    background: #ffd700;
+    color: #0077ff;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+section {
+    margin-bottom: 2.5rem;
+    h2 {
+        color: #222;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+/* Smooth scroll effect for sections */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+h2 {
+    color: #0077ff;
+    margin-bottom: 1rem;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #222;
+    color: #fff;
+    margin-top: 2rem;
+    border-radius: 0 0 10px 10px;
+}
+/* Scroll Down Button Styles */
+.scroll-down-btn {
+    display: inline-block;
+    margin-top: 5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3rem;
+    color: #fff;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down-btn .arrow {
+    display: inline-block;
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.scroll-down-btn:hover .arrow {
+    transform: translateY(5px);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Minimal and beautiful styles for the About section */
+#about {
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+#about-title {
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#about-desc {
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+/* Styles for the Experience section */
+#experience {
+  background: linear-gradient(135deg, #ffffff, #f3f3f3);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+#experience-title {
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#experience-list {
+  list-style: none;
+  padding: 0;
+}
+
+#experience-list li {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#experience-list li img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#experience-list li div {
+  display: inline-flex;
+  .year-range {
+    width: 15rem;
+  }
+}
+
+#experience-list li strong {
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1.5rem;
+}
+
+.skills {
+  margin-top: auto;
+  text-align: center;
+  justify-content: flex-end;
+}
+
+/* Styles for the Education section with inline info cards */
+#studies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#studies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#studies-list li {
+  flex: 1 1 calc(33.333% - 1rem);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  #studies-list li {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  #studies-list li {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Styles for skill chips */
+.chip {
+  display: inline-block;
+  background-color: #0077ff;
+  color: #fff;
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  margin: 0.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chip:hover {
+  background-color: #0056cc;
+  transform: scale(1.05);
+}
