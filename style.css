@@ -179,6 +179,10 @@ footer {
     display: inline-block;
     transform: translateY(0);
     transition: transform 0.3s;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-radius: 50%;
+    padding: .1rem 1.4rem;;
 }
 
 .scroll-down-btn:hover .arrow {
@@ -241,8 +245,9 @@ footer {
 #experience-list li {
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: #430e79;
+  /*background: #430e79;*/
   border-radius: 8px;
+  border: 1px solid #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -256,6 +261,13 @@ footer {
   border-radius: 50%;
   margin-right: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-list-title {
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 #experience-list li div {
