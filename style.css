@@ -69,7 +69,6 @@ body {
 }
 /* Add transition effect for the navbar */
 header {
-  background-color: #480101;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -92,21 +91,23 @@ nav {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    background: #480101;
     padding: 0.5rem 1rem;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem .5rem;
     border-radius: 20px;
     transition: background 0.2s, color 0.2s;
 }
 nav a:hover {
-    background: #ffd700;
-    color: #0077ff;
+  background-color: #130b37;
 }
 main {
     display: flex;
@@ -159,9 +160,8 @@ ul li {
 footer {
     text-align: center;
     padding: 1rem 0;
-    background: #222;
+    background: #000000;
     color: #fff;
-    margin-top: 2rem;
     border-radius: 0 0 10px 10px;
 }
 /* Scroll Down Button Styles */
@@ -253,6 +253,9 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  .description {
+    line-height: 1.5rem;
+  }
 }
 
 #experience-list li img {
@@ -267,13 +270,17 @@ footer {
   a {
     color: #fff;
     text-decoration: none;
+    margin-left: 0.5rem;
   }
 }
 
 #experience-list li div {
   display: inline-flex;
   .year-range {
-    width: 15rem;
+    width: 20%;
+    margin-top: 1.5rem;
+    text-align: right;
+      font-style: italic;
   }
 }
 
@@ -282,6 +289,7 @@ footer {
   font-size: 1.2rem;
   color: #fff;
   margin-top: 1.5rem;
+  width: 80%;
 }
 
 .skills {
@@ -314,14 +322,14 @@ footer {
 
 .studies-list-title {
   display: flex;
-  align-items: center;
   margin-bottom: 0.5rem;
   .studies-list-info {
-    margin-top: 1rem;
+    text-align: left;
   }
   span {
     display: block;
     text-align: left;
+    font-style: italic;
   }
 }
 
@@ -336,9 +344,11 @@ footer {
   border-width: 1.5px 1.5px 1.5px 1.5px;
   border-color: #fff;
   color: #fff;
+  border-radius: 8px;
+  margin: 0 0.5rem;
   img {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     margin-right: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -370,7 +380,7 @@ footer {
 /* Styles for skill chips */
 .chip {
   display: inline-block;
-  background-color: #b53434;
+  background-color: #354db3;
   color: #fff;
   font-family: 'Mona Sans', sans-serif;
   font-size: 0.9rem;
@@ -380,10 +390,11 @@ footer {
   margin: 0.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .chip:hover {
-  background-color: #dd4141;
+  background-color: #405ddc;
   transform: scale(1.05);
 }
 
