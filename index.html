@@ -31,23 +31,25 @@
   <meta property="og:url" content="https://marioherrerosdiaz.es">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
+  <!-- Accessibility improvements -->
+  <meta name="color-scheme" content="dark light">
 </head>
 <body>
   <header>
-    <nav>
-      <a href="#">./mariohhd</a>
-      <a href="#about" id="nav-about">./sobre_mi</a>
-      <a href="#experience" id="nav-experience">./experiencia</a>
-      <a href="#studies" id="nav-studies">./estudios</a>
-      <a href="#contact" id="nav-contact">./contacto</a>
+    <nav aria-label="Navegación principal">
+      <a href="#" aria-label="Inicio">./mariohhd</a>
+      <a href="#about" id="nav-about" aria-label="Sobre mí">./sobre_mi</a>
+      <a href="#experience" id="nav-experience" aria-label="Experiencia">./experiencia</a>
+      <a href="#studies" id="nav-studies" aria-label="Estudios">./estudios</a>
+      <a href="#contact" id="nav-contact" aria-label="Contacto">./contacto</a>
     </nav>
   </header>
   <section class="hero">
     <div class="hero-content header finisher-header" style="width: 100%;">
       <h1 class="hero-title" style="display: inline;">Mario Herreros Díaz</h1>
       <p class="hero-subtitle">Ingeniero Informático | Desarrollador Full Stack | Docente</p>
-      <a href="#about" class="scroll-down-btn">
-        <span class="arrow">&#x2193;</span>
+      <a href="#about" class="scroll-down-btn" aria-label="Ir a Sobre mí">
+        <span class="arrow" aria-hidden="true">&#x2193;</span>
       </a>
     </div>
   </section>
@@ -211,7 +213,7 @@
     <p id="footer-text">&copy; 2025 Mario Herreros Díaz. Todos los derechos reservados.</p>
   </footer>
   <button id="back-to-top" title="Back to top">&#8679;</button>
-  <script src="finisher-header.es5.min.js" type="text/javascript"></script>
+  <script src="assets/javascripts/external/finisher-header.es5.min.js" type="text/javascript"></script>
   <script type="text/javascript">
     new FinisherHeader({
       "count": 10,
