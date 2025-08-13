@@ -1,5 +1,18 @@
 const typeHeroTitles = () => {
-  document.querySelector('.hero-subtitle').innerText = '';
+  if(!Typed) {
+    console.error('Typed.js library is not loaded.');
+    return;
+  }
+  
+  // Clear any existing text before typing
+  const heroSubtitle = document.querySelector('.hero-subtitle');
+  if (!heroSubtitle) {
+    console.error('Hero subtitle element not found.');
+    return;
+  }
+  heroSubtitle.innerText = '';
+  
+  // Initialize Typed.js with the new text
   new Typed('.hero-subtitle', {
     strings: ['Ingeniero Informático | Desarrollador Full Stack | Docente'],
     typeSpeed: 30,
@@ -45,8 +58,69 @@ const showNavBar = () => {
   observer.observe(heroSection);
 }
 
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+
+  const finisherColors = theme === 'dark' ? {
+    background: '#9138e5',
+    particles: ['#0c0528', '#000000', '#2235e5', '#000000', '#867fe5']
+  } : {
+    background: '#ffffff',
+    particles: ['#d0d0d0', '#c0c0c0', '#e8f0fe', '#f5f5f5', '#333333']
+  };
+
+  new FinisherHeader({
+      "count": 10,
+      "size": {
+        "min": 1300,
+        "max": 1500,
+        "pulse": 0
+      },
+      "speed": {
+        "x": {
+          "min": 0.1,
+          "max": 0.6
+        },
+        "y": {
+          "min": 0.1,
+          "max": 0.6
+        }
+      },
+      "colors": finisherColors,
+      "blending": "overlay",
+      "opacity": {
+        "center": 0.5,
+        "edge": 0.05
+      },
+      "skew": 0,
+      "shapes": [
+        "c"
+      ]
+    });
+}
+
+const detectSystemPreference = () => {
+  const userPreference = localStorage.getItem('theme');
+  if (userPreference) {
+    return userPreference;
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   typeHeroTitles();
   showSectionOnScrollDown();
   showNavBar();
+
+  const currentTheme = detectSystemPreference();
+  applyTheme(currentTheme);
+
+  const toggleButton = document.getElementById('theme-toggle');
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+    });
+  }
 });
