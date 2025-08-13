@@ -58,9 +58,17 @@ const showNavBar = () => {
   observer.observe(heroSection);
 }
 
-const applyTheme = (theme) => {
+const applyTheme = (theme, toggleButton) => {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
+  document.getElementById('dark-icon').style.display = theme === 'dark' ? 'block' : 'none';
+  document.getElementById('light-icon').style.display = theme === 'light' ? 'block' : 'none';
+
+  // Update button text based on theme
+  if(toggleButton) {
+    toggleButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    toggleButton.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  }
 
   const finisherColors = theme === 'dark' ? {
     background: '#9138e5',
@@ -95,7 +103,8 @@ const applyTheme = (theme) => {
       },
       "skew": 0,
       "shapes": [
-        "c"
+        "c",
+        "t",
       ]
     });
 }
@@ -120,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
       const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
+      applyTheme(newTheme, toggleButton);
     });
   }
 });

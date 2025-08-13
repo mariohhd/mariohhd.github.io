@@ -55,6 +55,7 @@
   --color-bg-contact-link: #e8f0fe;
   --color-bg-backtotop: #000000;
   --color-bg-backtotop-hover: #333333;
+  --color-text-backtotop: #ffffff;
   --color-border: #000000;
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-medium: rgba(0, 0, 0, 0.2);
@@ -73,6 +74,7 @@
   --color-bg-contact-link: #052444;
   --color-bg-backtotop: #ffffff;
   --color-bg-backtotop-hover: #f0e7e7;
+  --color-text-backtotop: #333;
   --color-border: #ffffff;
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-medium: rgba(0, 0, 0, 0.12);
@@ -625,7 +627,7 @@ footer {
     right: 20px;
     display: none;
     background-color: var(--color-bg-backtotop);
-    color: var(--color-text-dark);
+    color: var(--color-text-backtotop);
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -685,4 +687,28 @@ footer {
   header {
     display: none;
   }
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: var(--color-bg-backtotop);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow-medium);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  svg {
+    margin-left: 2px;
+  }
+}
+
+#theme-toggle:hover {
+    background: var(--color-bg-backtotop-hover);
 }
