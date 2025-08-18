@@ -61,8 +61,8 @@ const showNavBar = () => {
 const applyTheme = (theme, toggleButton) => {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
-  document.getElementById('dark-icon').style.display = theme === 'dark' ? 'block' : 'none';
-  document.getElementById('light-icon').style.display = theme === 'light' ? 'block' : 'none';
+  document.getElementById('dark-icon').style.display = theme === 'light' ? 'block' : 'none';
+  document.getElementById('light-icon').style.display = theme === 'dark' ? 'block' : 'none';
 
   // Update button text based on theme
   if(toggleButton) {

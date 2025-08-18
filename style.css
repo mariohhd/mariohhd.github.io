@@ -712,3 +712,116 @@ footer {
 #theme-toggle:hover {
     background: var(--color-bg-backtotop-hover);
 }
+
+/* Projects Section */
+.projects-section {
+  padding: 4rem 2rem;
+}
+.projects-title {
+  text-align: center;
+  font-size: var(--font-size-section-title);
+  margin-bottom: 2.5rem;
+  color: var(--color-text-main);
+}
+.projects-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Add spacing between rows */
+}
+.projects-category {
+  width: 100%;
+}
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Add spacing between cards */
+  justify-content: center; /* Center cards within each row */
+}
+.project-card {
+  background: var(--color-bg-footer);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px var(--shadow-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px var(--shadow-medium);
+}
+.project-card img {
+  position: relative;
+  height: 250px; /* Set a fixed height for the image */
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+.project-card img.scroll-loop {
+  animation: scroll-vertical 10s linear infinite;
+}
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.project-info {
+  padding: 1.2rem;
+}
+.project-info h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--color-text-main);
+}
+.project-info p {
+  color: var(--color-text-main);
+  font-size: var(--font-size-body);
+  margin-bottom: 1rem;
+}
+.project-info a {
+  color: var(--color-bg-chip);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.project-info a:hover {
+  color: var(--color-bg-chip-hover);
+}
+@media (max-width: 1000px) {
+  .projects-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects-category {
+    max-width: 100%;
+  }
+}
+
+.scroll-container {
+  height: 250px;
+  width: auto;
+  overflow: hidden; /* Oculta lo que se sale del contenedor */
+  position: relative;
+}
+
+.scroll-inner {
+  animation: scroll-image 10s linear infinite;
+}
+
+@keyframes scroll-image {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-750px); /* 1000 - 250 = 750px de scroll hacia arriba */
+  }
+}
+
+.scroll-inner img {
+  display: block;
+  height: 1000px; /* Asegúrate de que esta sea la altura real de tu imagen */
+}
