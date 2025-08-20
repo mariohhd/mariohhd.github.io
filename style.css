@@ -826,3 +826,106 @@ footer {
   display: block;
   height: 1000px; /* Asegúrate de que esta sea la altura real de tu imagen */
 }
+
+/* Mobile Top Navbar */
+.mobile-top-navbar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-top-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56px;
+    background: var(--color-bg-main, #1a191d);
+    z-index: 1200;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .mobile-top-navbar .burger-menu {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .mobile-navbar-title {
+    flex: 1;
+    text-align: center;
+    color: var(--color-text-main, #fff);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  header {
+    display: none;
+  }
+}
+
+/* Burger menu styles for mobile */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1101;
+}
+.burger-menu span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: var(--color-text-main, #fff);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+@media (max-width: 900px) {
+  .burger-menu {
+    display: flex;
+  }
+}
+
+.burger-menu.open span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 5px);
+}
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(12px, -12px);
+}
+
+/* Sidebar styles for mobile */
+.sidebar-nav {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 220px;
+  height: 100vh;
+  background: var(--color-bg-main, #1a191d);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+  transition: left 0.3s;
+  z-index: 1100;
+}
+.sidebar-nav.open {
+  left: 0;
+}
+.sidebar-nav a {
+  color: var(--color-text-main, #fff);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+.sidebar-nav a:hover {
+  color: var(--color-bg-chip, #354db3);
+}
