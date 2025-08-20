@@ -806,10 +806,11 @@ footer {
   width: auto;
   overflow: hidden; /* Oculta lo que se sale del contenedor */
   position: relative;
+  cursor: pointer;
 }
 
-.scroll-inner {
-  animation: scroll-image 10s linear infinite;
+.scroll-container:hover .scroll-inner {
+  animation: scroll-image 30s linear infinite;
 }
 
 @keyframes scroll-image {
