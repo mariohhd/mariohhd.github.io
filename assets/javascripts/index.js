@@ -61,9 +61,16 @@ const showNavBar = () => {
 const applyTheme = (theme, toggleButton) => {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
-  document.getElementById('dark-icon').style.display = theme === 'light' ? 'block' : 'none';
-  document.getElementById('light-icon').style.display = theme === 'dark' ? 'block' : 'none';
+  //TODO refactor this buttons
+  const darkIcon = document.getElementById('dark-icon');
+  const lightIcon = document.getElementById('light-icon');
+  const mobileDarkIcon = document.getElementById('mobile-dark-icon');
+  const mobileLightIcon = document.getElementById('mobile-light-icon');
 
+  darkIcon.style.display = theme === 'light' ? 'block' : 'none';
+  lightIcon.style.display = theme === 'dark' ? 'block' : 'none';
+  mobileDarkIcon.style.display = theme === 'light' ? 'block' : 'none';
+  mobileLightIcon.style.display = theme === 'dark' ? 'block' : 'none';
   // Update button text based on theme
   if(toggleButton) {
     toggleButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
@@ -130,6 +137,14 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleButton.addEventListener('click', () => {
       const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       applyTheme(newTheme, toggleButton);
+    });
+  }
+
+  const toggleButtonMobile = document.getElementById('mobile-theme-toggle');
+  if (toggleButtonMobile) {
+    toggleButtonMobile.addEventListener('click', () => {
+      const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme, toggleButtonMobile);
     });
   }
 

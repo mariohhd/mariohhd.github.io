@@ -530,6 +530,26 @@ footer {
     background: var(--color-bg-backtotop-hover);
 }
 
+/* Theme Toggle Button */
+#mobile-theme-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: var(--color-bg-backtotop);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow-medium);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  svg {
+    margin-left: 2px;
+  }
+}
+
 /* Projects Section */
 .projects-section {
   padding: 4rem 2rem;
