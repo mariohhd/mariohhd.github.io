@@ -192,11 +192,16 @@
               <div class="scroll-container">
                 <div class="scroll-inner">
                   <a href="https://www.elcorteingles.es">
-                    <picture>
-                      <source srcset="assets/images/projects/full_eci_es.avif" type="image/avif">
-                      <source srcset="assets/images/projects/full_eci_es.webp" type="image/webp">
-                      <img src="assets/images/projects/full_eci_es.jpg" alt="Imagen con scroll">
-                    </picture>
+                  <picture>
+                    <!-- Mobile: show this image for screens less than 768px -->
+                    <source media="(max-width: 768px)" srcset="assets/images/projects/small/eci_es.avif" type="image/avif">
+                    <source media="(max-width: 768px)" srcset="assets/images/projects/small/eci_es.webp" type="image/webp">
+                    <source media="(max-width: 768px)" srcset="assets/images/projects/small/eci_es.png" type="image/png">
+                    <!-- Desktop: show this image for screens 768px and up -->
+                    <source media="(min-width: 769px)" srcset="assets/images/projects/full_eci_es.avif" type="image/avif">
+                    <source media="(min-width: 769px)" srcset="assets/images/projects/full_eci_es.webp" type="image/webp">
+                    <img src="assets/images/projects/full_eci_es.png" alt="elcorteingles.es" loading="lazy">
+                  </picture>
                   </a>
                 </div>
               </div>
